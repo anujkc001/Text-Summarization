@@ -49,7 +49,7 @@ open up you local host and port
 
 
 ```bash
-Author: amujkc001
+Author: anujkc001
 Email: chauhananujkumar278@gmail.com
 
 ```
