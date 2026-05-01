@@ -39,11 +39,13 @@ class DataTransformation:
 
     def convert_examples_to_features(self, example_batch):
         # Fixed typo: truncation
-        input_encodings = self.tokenizer(example_batch['dialogue'], max_length=1024, truncation=True)
+        # input_encodings = self.tokenizer(example_batch['dialogue'], max_length=1024, truncation=True)
+        input_encodings = self.tokenizer(example_batch['dialogue'], max_length=128, truncation=True)
 
         with self.tokenizer.as_target_tokenizer():
             # Fixed typo: truncation
-            target_encodings = self.tokenizer(example_batch['summary'], max_length=128, truncation=True)
+            # target_encodings = self.tokenizer(example_batch['summary'], max_length=128, truncation=True)
+            target_encodings = self.tokenizer(example_batch['summary'], max_length=32, truncation=True)
 
         return {
             'input_ids': input_encodings['input_ids'],
